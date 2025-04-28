@@ -1,0 +1,16 @@
+post_id,username,text,likes,retweets,following,followers,model_score
+post_1,user1,This is a sample post #1. It discusses a potentially misleading or trending topic.,704,380,578,36456,0.755
+post_2,user2,This is a sample post #2. It discusses a potentially misleading or trending topic.,759,71,378,27187,0.314
+post_3,user3,This is a sample post #3. It discusses a potentially misleading or trending topic.,275,33,957,6106,0.785
+post_4,user4,This is a sample post #4. It discusses a potentially misleading or trending topic.,657,447,882,45063,0.325
+post_5,user5,This is a sample post #5. It discusses a potentially misleading or trending topic.,812,27,404,27160,0.811
+post_6,user6,This is a sample post #6. It discusses a potentially misleading or trending topic.,303,324,787,19639,0.291
+post_7,user7,This is a sample post #7. It discusses a potentially misleading or trending topic.,631,245,945,15655,0.422
+post_8,user8,This is a sample post #8. It discusses a potentially misleading or trending topic.,378,312,684,23894,0.418
+post_9,user9,This is a sample post #9. It discusses a potentially misleading or trending topic.,695,430,948,15369,0.658
+post_10,user10,This is a sample post #10. It discusses a potentially misleading or trending topic.,593,187,380,24616,0.283
+post_11,user11,This is a sample post #11. It discusses a potentially misleading or trending topic.,748,223,130,43415,0.778
+post_12,user12,This is a sample post #12. It discusses a potentially misleading or trending topic.,317,452,360,48103,0.924
+post_13,user13,This is a sample post #13. It discusses a potentially misleading or trending topic.,240,367,750,37212,0.202
+post_14,user14,This is a sample post #14. It discusses a potentially misleading or trending topic.,617,462,527,21659,0.636
+post_15,user15,This is a sample post #15. It discusses a potentially misleading or trending topic.,529,21,596,4717,0.939

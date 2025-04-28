@@ -1,0 +1,12 @@
+# Python
+*.pyc
+__pycache__/
+
+# Gspread credentials
+gspread_credentials.json
+
+# Environment files
+.env
+
+# Streamlit specific
+.streamlit/secrets.toml
