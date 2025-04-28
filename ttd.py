@@ -6,7 +6,7 @@ import pygsheets
 from google.oauth2.service_account import Credentials
 
 # Page config
-st.set_page_config(page_title="Time-to-Decision Task", layout="centered")
+st.set_page_config(page_title="Pick Claims Fact-Checking Task", layout="centered")
 
 # Authenticate Google Sheets
 @st.cache_resource
@@ -27,7 +27,7 @@ if "user_id" not in st.session_state:
     st.session_state.user_id = str(uuid.uuid4())
 
 # Header and user ID
-st.title("Time-to-Decision (TTD) Fact-Checking Task")
+st.title("Pick Claims to Fact-Check")
 user_identifier = st.text_input("Please enter your Participant ID (required to proceed):")
 
 st.markdown("""
