@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
 import uuid
-from datetime import datetime
+from datetime import datetime, UTC
 import pygsheets
+from google.oauth2.service_account import Credentials
 
 # Page config
 st.set_page_config(page_title="Time-to-Decision Task", layout="centered")
@@ -10,7 +11,15 @@ st.set_page_config(page_title="Time-to-Decision Task", layout="centered")
 # Authenticate Google Sheets
 @st.cache_resource
 def get_gsheet_client():
-    return pygsheets.authorize(service_file='gspread_credentials.json')
+    scopes = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    credentials = Credentials.from_service_account_info(
+        st.secrets["gspread"],
+        scopes=scopes
+    )
+    return pygsheets.authorize(custom_credentials=credentials)
 
 # Load posts from CSV
 @st.cache_data
@@ -57,7 +66,7 @@ def render_tab(view_name, posts_df, sheet_name, timer_key):
             selected = st.checkbox("Flag for Fact-Checking", key=f"select_{timer_key}_{row['post_id']}")
             st.divider()
             selections.append({
-                "timestamp": datetime.utcnow().isoformat(),
+                "timestamp": datetime.now(UTC).isoformat(),
                 "user_id": st.session_state.user_id,
                 "participant_id": user_identifier,
                 "post_id": row['post_id'],
