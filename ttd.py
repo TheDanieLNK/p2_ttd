@@ -47,7 +47,7 @@ def load_toolranked_posts():
 
 
 # Tab layout
-tab1, tab2 = st.tabs(["Manual View", "Tool-Ranked View"])
+tab1, tab2 = st.tabs(["Manual View", "AI-Ranked View"])
 
 # Function to render each condition
 def render_tab(view_name, posts_df, sheet_name, timer_key):
@@ -99,4 +99,6 @@ with tab1:
 # Tool-ranked view: load and sort
 with tab2:
     ranked_df = load_toolranked_posts().sort_values(by="model_score", ascending=False).reset_index(drop=True)
-    render_tab("Tool-Ranked View", ranked_df, "TTD_ToolRanked", "tool")
+    # Add a Rank column based on model_score descending
+    ranked_df['rank'] = ranked_df.index + 1
+    render_tab("AI-Ranked View", ranked_df, "TTD_ToolRanked", "tool")
