@@ -42,13 +42,9 @@ def load_manual_posts():
 
 # Load posts for Tool-Ranked view
 @st.cache_data
-def load_toolranked_posts(encoding='utf-8'):
-    try:
-        df = pd.read_csv("tool_ranked.csv", encoding=encoding)
-        return df
-    except UnicodeDecodeError as e:
-        st.error(f"Error decoding file with '{encoding}' encoding: {e}")
-        return None
+def load_toolranked_posts():
+    return pd.read_csv("tool.csv")
+
 
 # Tab layout
 tab1, tab2 = st.tabs(["Manual View", "Tool-Ranked View"])
