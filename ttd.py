@@ -21,10 +21,6 @@ def get_gsheet_client():
     )
     return pygsheets.authorize(custom_credentials=credentials)
 
-# Load posts from CSV
-@st.cache_data
-def load_posts():
-    return pd.read_csv("ttd_posts.csv")
 
 # Create unique user session ID
 if "user_id" not in st.session_state:
