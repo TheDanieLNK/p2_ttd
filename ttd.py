@@ -35,6 +35,11 @@ In this task, you'll scan through a stream of posts and **select the ones you be
 Use the tabs below to complete the task under two different views: a manual stream and an AI-ranked stream.
 """)
 
+# Load posts for Manual view
+@st.cache_data
+def load_manual_posts():
+    return pd.read_csv("manual.csv")
+
 # Load posts for Tool-Ranked view
 @st.cache_data
 def load_toolranked_posts(encoding='utf-8'):
@@ -44,10 +49,6 @@ def load_toolranked_posts(encoding='utf-8'):
     except UnicodeDecodeError as e:
         st.error(f"Error decoding file with '{encoding}' encoding: {e}")
         return None
-
-def load_toolranked_posts():
-    return pd.read_csv()
-
 
 # Tab layout
 tab1, tab2 = st.tabs(["Manual View", "Tool-Ranked View"])
