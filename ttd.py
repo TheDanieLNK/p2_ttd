@@ -98,7 +98,7 @@ with tab1:
 
 # Tool-ranked view: load and sort
 with tab2:
-    ranked_df = load_toolranked_posts().sort_values(by="model_score", ascending=False).reset_index(drop=True)
+    ranked_df = load_toolranked_posts().sort_values(by="model_score", ascending=True).reset_index(drop=True)
     # Add a Rank column based on model_score descending
     ranked_df['rank'] = ranked_df.index + 1
     render_tab("AI-Ranked View", ranked_df, "TTD_ToolRanked", "tool")
