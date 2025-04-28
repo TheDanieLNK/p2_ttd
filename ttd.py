@@ -43,7 +43,7 @@ def load_manual_posts():
 # Load posts for Tool-Ranked view
 @st.cache_data
 def load_toolranked_posts():
-    return pd.read_csv("tool.csv")
+    return pd.read_csv("tool.csv", encoding="utf-8")
 
 
 # Tab layout
